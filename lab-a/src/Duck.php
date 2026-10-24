@@ -1,7 +1,7 @@
 <?php
 namespace Dzawadzki\LabComposer;
 
-use Psr\Log\LoggerInterface;
+use pogodynka\vendor\psr\log\src\LoggerInterface;
 
 class Duck
 {
@@ -21,5 +21,6 @@ class Duck
             $this->logger->debug("Quack() activated.");
         }
         echo "Quack\n";
+
     }
 }

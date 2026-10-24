@@ -8,6 +8,12 @@ vendor/
 # Log files
 *.log
 
+# docx files
+*.docx
+
+# pdf files
+*.pdf
+
 # Environment variables
 .env
 .env.*
