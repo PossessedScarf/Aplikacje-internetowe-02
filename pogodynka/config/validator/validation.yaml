@@ -1,0 +1,44 @@
+App\Entity\Location:
+    properties:
+        city:
+            - NotBlank:
+                  message: 'City cannot be empty.'
+                  groups: ['Default', 'create', 'edit']
+
+        latitude:
+            - NotBlank:
+                  groups: ['Default', 'create', 'edit']
+            - Range:
+                  min: -90
+                  max: 90
+                  notInRangeMessage: 'Latitude must be between -90 and 90.'
+                  groups: ['Default', 'create', 'edit']
+
+        longitude:
+            - NotBlank:
+                  groups: ['Default', 'create', 'edit']
+            - Range:
+                  min: -180
+                  max: 180
+                  notInRangeMessage: 'Longitude must be between -180 and 180.'
+                  groups: ['Default', 'create', 'edit']
+
+App\Entity\Measurement:
+    properties:
+        date:
+            - NotBlank:
+                  groups: ['Default', 'create', 'edit']
+            - GreaterThanOrEqual:
+                  value: 'today'
+                  message: 'Date must be in the future.'
+                  groups: ['Default', 'create', 'edit']
+        celsius:
+            -   NotBlank:
+                    groups: ['Default', 'create', 'edit']
+
+            -   Range:
+                    min: -60
+                    max: 100
+                    notInRangeMessage: 'Is it Global Warming or Ice Age 2: Electric boogaloo'
+                    groups: [ 'Default', 'create', 'edit' ]
+
